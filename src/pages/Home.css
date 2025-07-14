@@ -1,0 +1,20 @@
+.css-1stg72c {
+    /* min-height: 100vh; */
+    background-color: #EA8C9C;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display
+In combination with 'float' and 'position', determines the type of box or boxes that are generated for an element.
+Learn more
+
+Don't show
+: flex
+;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 100px;
+    padding-right: 32px;
+}
