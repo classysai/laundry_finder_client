@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import BookingDetails from './pages/BookingDetails';
 import BookingForm from './pages/BookingForm';
 import MyBookings from './pages/MyBookings';
+import Bookings from './pages/Bookings';
 
 function App() {
   const { user, setUser } = useContext(BookingContext);
@@ -30,6 +31,7 @@ function App() {
         <Route path="/register" element={!user ? <Register /> : <Navigate to="/dashboard" />} />
         {/* <Route path="/owner" element={<OwnerDashboard />} /> */}
         <Route path="/owner/booking/:id" element={<BookingDetails />} />
+        <Route path="/bookings" element={<Bookings />} />
         <Route
           path="/dashboard"
           element={
