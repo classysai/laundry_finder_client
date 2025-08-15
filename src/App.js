@@ -8,6 +8,10 @@ import Register from './pages/Register';
 import UserDashboard from './pages/UserDashboard';
 import OwnerDashboard from './pages/OwnerDashboard';
 import Navbar from './components/Navbar';
+// import OwnerDashboard from './pages/OwnerDashboard';
+import BookingDetails from './pages/BookingDetails';
+import BookingForm from './pages/BookingForm';
+import MyBookings from './pages/MyBookings';
 
 function App() {
   const { user, setUser } = useContext(BookingContext);
@@ -24,6 +28,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
         <Route path="/register" element={!user ? <Register /> : <Navigate to="/dashboard" />} />
+        {/* <Route path="/owner" element={<OwnerDashboard />} /> */}
+        <Route path="/owner/booking/:id" element={<BookingDetails />} />
         <Route
           path="/dashboard"
           element={
@@ -34,6 +40,9 @@ function App() {
             )
           }
         />
+        <Route path="/bookings/new" element={user ? <BookingForm /> : <Navigate to="/login" />} />
+<Route path="/bookings/:id/edit" element={user ? <BookingForm /> : <Navigate to="/login" />} />
+<Route path="/my-bookings" element={user ? <MyBookings /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );
